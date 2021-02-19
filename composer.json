@@ -2,6 +2,13 @@
     "name": "spryker-shop/suite",
     "description": "Spryker Shop Suite",
     "license": "MIT",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "vendor/spryker/customer-base"
+        }
+
+    ],
     "require": {
         "php": ">=7.3",
         "ext-bcmath": "*",
@@ -372,6 +379,7 @@
         "spryker/customer-access-rest-api": "^1.0.0",
         "spryker/customer-access-storage": "^1.0.0",
         "spryker/customer-api": "^0.1.0",
+        "spryker/customer-base": "1.0.x-dev",
         "spryker/customer-catalog": "^1.0.0",
         "spryker/customer-extension": "^1.0.0",
         "spryker/customer-group": "^2.0.0",

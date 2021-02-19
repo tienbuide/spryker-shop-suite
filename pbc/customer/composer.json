@@ -1,0 +1,32 @@
+{
+    "name": "spryker-pbc/customer",
+    "type": "spryker-pbc",
+    "require": {
+        "php": ">=7.3",
+        "ext-json": "*",
+        "spryker/console": "^4.9",
+        "spryker/customer": "^7.35",
+        "spryker/propel-query-builder": "^0.3.6",
+        "spryker/event-dispatcher": "^1.2",
+        "filp/whoops": "^2.9",
+        "spryker/http": "^1.4",
+        "spryker/router": "^1.11",
+        "spryker/customer-group": "^2.5",
+        "spryker/company-user": "^2.14",
+        "spryker/business-on-behalf": "^1.1",
+        "spryker/company-business-unit": "^2.11"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^5.2"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Generated\\": "src/Generated/",
+            "Orm\\": "src/Orm/",
+            "Pyz\\": "src/Pyz/",
+            "SprykerConfig\\": "src/SprykerConfig"
+        }
+    }
+}
