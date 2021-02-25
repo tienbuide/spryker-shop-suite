@@ -7,9 +7,9 @@ use Generated\Shared\Transfer\RpcArgumentTransfer;
 use Generated\Shared\Transfer\RpcCallTransfer;
 use Generated\Shared\Transfer\RpcTypeNullTransfer;
 use Spryker\Shared\Kernel\Transfer\AbstractTransfer;
-use Spryker\Zed\Customer\Communication\Controller\GatewayController as SprykerGatewayController;
+use Spryker\Zed\Customer\Communication\Controller\GatewayController as SprykerCustomerGatewayController;
 
-class GatewayController extends SprykerGatewayController
+class GatewayController extends SprykerCustomerGatewayController
 {
     public function rpcAction(RpcCallTransfer $rpcCallTransfer)
     {

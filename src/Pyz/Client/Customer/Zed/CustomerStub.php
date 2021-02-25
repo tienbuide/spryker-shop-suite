@@ -14,6 +14,7 @@ class CustomerStub extends SprykerCustomerStub
     {
         parent::__construct($zedStub);
 
+        // ZedRequest with changed Zed gateway URL
         $this->zedStub->setFactory(new CustomerZedRequestFactory());
     }
 }

@@ -48,6 +48,7 @@ class CustomerFacade extends AbstractFacade
      */
     protected function getPbcClient()
     {
+        // Hack: Zed uses zedRequest from Client
         /** @var \Spryker\Client\ZedRequest\ZedRequestClient $zedRequestClient */
         $zedRequestClient = Locator::getInstance()->zedRequest()->client();
         $zedRequestClient->setFactory(new CustomerZedRequestFactory());

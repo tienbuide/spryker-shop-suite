@@ -9,6 +9,7 @@ class CustomerZedRequestConfig extends ZedRequestConfig
 {
     public function getZedRequestBaseUrl()
     {
+        // PBC application URL
         return 'http://customer.spryker.local';
     }
 
