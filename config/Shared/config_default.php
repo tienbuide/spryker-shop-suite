@@ -432,6 +432,11 @@ foreach ($rabbitConnections as $key => $connection) {
         $config[RabbitMqEnv::RABBITMQ_CONNECTIONS][$key][constant(RabbitMqEnv::class . '::' . $constant)] = $value;
     }
     $config[RabbitMqEnv::RABBITMQ_CONNECTIONS][$key][RabbitMqEnv::RABBITMQ_DEFAULT_CONNECTION] = $key === APPLICATION_STORE;
+    $config[RabbitMqEnv::RABBITMQ_CONNECTIONS][$key][RabbitMqEnv::RABBITMQ_STREAM_CONTEXT_OPTIONS] = [
+        'ssl' => [
+            'verify_peer' => true,
+        ],
+    ];
 }
 
 // >>> SCHEDULER
@@ -547,7 +552,7 @@ if (class_exists(TestifyConstants::class)) {
     $config[TestifyConstants::GLUE_APPLICATION_DOMAIN] = $config[GlueApplicationConstants::GLUE_APPLICATION_DOMAIN];
 }
 
-$config[GlueApplicationConstants::GLUE_APPLICATION_CORS_ALLOW_ORIGIN] = getenv('SPRYKER_GLUE_APPLICATION_CORS_ALLOW_ORIGIN') ?: '';
+$config[GlueApplicationConstants::GLUE_APPLICATION_CORS_ALLOW_ORIGIN] = '*';
 
 // ----------------------------------------------------------------------------
 // ------------------------------ OMS -----------------------------------------
@@ -572,6 +577,8 @@ $config[SalesConstants::PAYMENT_METHOD_STATEMACHINE_MAPPING] = [
 
 // >>> Taxes
 $config[TaxConstants::DEFAULT_TAX_RATE] = 19;
+
+$config[CustomerConstants::REGISTRATION_CONFIRMATION_TOKEN_URL] = 'http://localhost:3000/?token=%s';
 
 // >>> Payone
 $payOneCredentials = json_decode(getenv('SPRYKER_PAYONE_CREDENTIALS') ?: 'null', true) ?: [

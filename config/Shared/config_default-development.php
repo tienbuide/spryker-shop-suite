@@ -144,6 +144,11 @@ $config[RabbitMqEnv::RABBITMQ_CONNECTIONS] = array_map(static function ($storeNa
         RabbitMqEnv::RABBITMQ_DEFAULT_CONNECTION => $storeName === APPLICATION_STORE,
     ];
 }, $stores);
+$rabbitConnections = json_decode(getenv('SPRYKER_BROKER_CONNECTIONS') ?: '[]', true);
+foreach ($rabbitConnections as $key => $connection) {
+    $config[RabbitMqEnv::RABBITMQ_CONNECTIONS][$key][RabbitMqEnv::RABBITMQ_STREAM_CONTEXT_OPTIONS] = null;
+}
+
 
 // ---------- LOGGER
 
