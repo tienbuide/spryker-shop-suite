@@ -108,7 +108,7 @@ groups:
         region: US
         applications:
             Zed:
-                application: backoffice
+                application: zed
                 endpoints:
                     backoffice.murdochs-new-stage.cloud.spryker.toys:
                         store: US
